@@ -59,7 +59,7 @@ set_location_assignment PIN_42 -to low
 set_location_assignment PIN_40 -to mid
 set_location_assignment PIN_38 -to high
 set_location_assignment PIN_86 -to error
-set_global_assignment -name VERILOG_FILE output_files/open_watter_supply.v
+set_global_assignment -name VERILOG_FILE open_watter_supply.v
 set_location_assignment PIN_72 -to watter_supply
 set_location_assignment PIN_54 -to alarme
 set_global_assignment -name VERILOG_FILE m7.v
@@ -69,6 +69,6 @@ set_location_assignment PIN_76 -to asp
 set_location_assignment PIN_36 -to Us
 set_location_assignment PIN_34 -to Ua
 set_location_assignment PIN_30 -to T
-set_global_assignment -name VERILOG_FILE output_files/got.v
+set_global_assignment -name VERILOG_FILE got.v
 set_location_assignment PIN_75 -to got
-set_global_assignment -name VERILOG_FILE "../../../../Ãrea de Trabalho/APAGAR/PBL1_quartus-20240417T190649Z-001/PBL1_quartus/main.v"
+set_global_assignment -name VERILOG_FILE "./main.v"
