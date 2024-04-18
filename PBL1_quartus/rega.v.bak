@@ -1,0 +1,5 @@
+module rega(input erro, input Us, input L, output rega);
+
+not not1(S1,Us);
+not not2(S2,erro);
+and and1(rega, not1, not2, l);
