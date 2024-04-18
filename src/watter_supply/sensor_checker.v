@@ -1,4 +1,4 @@
-module check_error(input low, input mid, input high, output error);
+module sensor_checker(input low, input mid, input high, output error);
 
 	wire s1, s2, n1, n2;
 	
