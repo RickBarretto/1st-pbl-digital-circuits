@@ -1,22 +1,22 @@
 module main(
-    //! Switches' channels inputs
-    //! CH 8
-    input low, 
-    //! CH 7
-    input middle,
-    //! CH 8
-    input high,
-
-    //! Led RGB outputs
-    //! Blue LED
-    output watter_supply,
-    //! RED LED
-    output error,
+input low, 
+input mid, 
+input Us, 
+input Ua,
+input T,
+input high, 
+output watter_supply, 
+output error, 
+output alarme, 
+output asp,
+output got
 );
 
-
-    watter_level_checker verify_inputs(error, low, mid, high);
-    watter_supply_controller open(watter_supply, error, high);
-
-
+	wire rega;
+	check_error creitinho_dugrau(low, mid, high, error);
+	open_watter_supply open(error, high, watter_supply);
+	rega rega_tete(error, Us, low,rega);
+	asp asp_teste(Us, Ua, T, mid, asp);
+	got got_teste(Us, Ua, T, mid, got);
+	
 endmodule
