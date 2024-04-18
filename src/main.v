@@ -15,11 +15,11 @@ module main(
 	wire rega;
 
 	sensor_checker check_error(low, mid, high, error);
-	open_watter_supply open(error, high, watter_supply);
+	open_watter_supply open_watter_supply(error, high, watter_supply);
 
-	irrigation_selector select(error, Us, low,rega);
+	irrigation_selector select_irrigator(error, Us, low,rega);
 
-	splinker open(Us, Ua, T, mid, asp);
-	dripper open(Us, Ua, T, mid, got);
+	splinker open_splinker(Us, Ua, T, mid, asp);
+	dripper open_dripper(Us, Ua, T, mid, got);
 	
 endmodule
