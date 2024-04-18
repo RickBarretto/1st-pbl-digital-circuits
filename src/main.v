@@ -16,8 +16,8 @@ module main(
 
 	sensor_checker check_error(low, mid, high, error);
 	open_watter_supply open(error, high, watter_supply);
-	rega rega_tete(error, Us, low,rega);
-	asp asp_teste(Us, Ua, T, mid, asp);
-	got got_teste(Us, Ua, T, mid, got);
+	irrigation_selector rega_tete(error, Us, low,rega);
+	splinker asp_teste(Us, Ua, T, mid, asp);
+	dripper got_teste(Us, Ua, T, mid, got);
 	
 endmodule
