@@ -15,7 +15,7 @@ module main(
 	wire rega;
 
 	sensor_checker check_error(low, mid, high, error);
-	open_watter_supply open_watter_supply(error, high, watter_supply);
+	watter_supply open_watter_supply(error, high, watter_supply);
 
 	irrigation_selector select_irrigator(error, Us, low,rega);
 

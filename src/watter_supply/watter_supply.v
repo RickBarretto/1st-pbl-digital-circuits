@@ -1,4 +1,4 @@
-module open_watter_supply(
+module watter_supply(
 	input error, 
 	input high, 
 	

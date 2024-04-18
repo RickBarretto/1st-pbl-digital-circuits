@@ -59,7 +59,7 @@ set_location_assignment PIN_42 -to low
 set_location_assignment PIN_40 -to mid
 set_location_assignment PIN_38 -to high
 set_location_assignment PIN_86 -to error
-set_global_assignment -name VERILOG_FILE src/watter_supply/open_watter_supply.v
+set_global_assignment -name VERILOG_FILE src/watter_supply/watter_supply.v
 set_location_assignment PIN_72 -to watter_supply
 set_location_assignment PIN_54 -to alarme
 set_global_assignment -name VERILOG_FILE src/display.v
