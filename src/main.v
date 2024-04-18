@@ -9,11 +9,11 @@ module main(
 	output error, 
 	output alarme, 
 	output asp,
-	output got,
+	output got
 );
 
 	wire rega;
-	
+
 	check_error creitinho_dugrau(low, mid, high, error);
 	open_watter_supply open(error, high, watter_supply);
 	rega rega_tete(error, Us, low,rega);

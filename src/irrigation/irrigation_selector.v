@@ -3,7 +3,7 @@ module irrigation_selector(
     input Us, 
     input low, 
     
-    output rega,
+    output rega
 );
 
     wire S1, S2;

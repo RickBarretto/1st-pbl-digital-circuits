@@ -3,7 +3,7 @@ module splinker(
     input ar, 
     input T, 
     input mid, 
-    output asp,
+    output asp
 );
 
     wire s1;

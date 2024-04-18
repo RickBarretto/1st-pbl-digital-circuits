@@ -7,7 +7,7 @@ module watter_level_checker(
     //! Watter's level sensors
     input low,
     input mid,
-    input high,
+    input high
 );
 
     wire high_mid;

@@ -8,7 +8,7 @@ module display(
     output D,
     output E,
     output F,
-    output G,
+    output G
 );
 
     not not1(A,asp);

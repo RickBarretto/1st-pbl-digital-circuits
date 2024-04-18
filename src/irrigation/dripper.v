@@ -4,7 +4,7 @@ module dripper(
     input T, 
     input mid, 
     
-    output got,
+    output got
 );
 
     wire s1, s2, s3;

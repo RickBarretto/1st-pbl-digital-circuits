@@ -8,7 +8,7 @@ module watter_supply_controller (
     output valvule,
 
     input error,
-    input high,
+    input high
 );
 
     nor low_and_ok(valvule, error, high);
