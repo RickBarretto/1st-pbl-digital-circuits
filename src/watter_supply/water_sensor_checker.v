@@ -1,4 +1,4 @@
-module sensor_checker(
+module water_sensor_checker(
 	output error,
 
 	input low_watter_level, 
