@@ -1,4 +1,3 @@
-
 //! Verify if the watter level sensors' input are working
 //! Higher levels are enabled only when the lower ones are enalbed too.  
 module watter_level_checker(

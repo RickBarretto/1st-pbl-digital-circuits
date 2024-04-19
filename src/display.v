@@ -1,14 +1,14 @@
 module display(
-    input dripper, 
-    input splinker,
-    
     output A,
     output B,
     output C,
     output D,
     output E,
     output F,
-    output G
+    output G,
+
+    input dripper, 
+    input splinker
 );
 
     not not1(A, splinker);

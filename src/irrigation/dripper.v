@@ -1,10 +1,10 @@
 module dripper(
+    output dripper_valvule,
+
     input earth_humidity, 
     input air_humidity, 
     input low_temperature, 
-    input mid_watter_level, 
-    
-    output dripper_valvule
+    input mid_watter_level
 );
 
     wire s1, s2, s3;

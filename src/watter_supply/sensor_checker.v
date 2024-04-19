@@ -1,9 +1,9 @@
 module sensor_checker(
+	output error,
+
 	input low_watter_level, 
 	input mid_watter_level, 
-	input high_watter_level, 
-
-	output error
+	input high_watter_level
 );
 
 	wire s1, s2, n1, n2;

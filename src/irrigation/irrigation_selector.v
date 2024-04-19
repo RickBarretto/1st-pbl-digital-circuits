@@ -1,9 +1,9 @@
 module irrigation_selector(
+    output irrigation_mode,
+
     input error, 
     input earth_humidity, 
-    input low_watter_level, 
-    
-    output irrigation_mode
+    input low_watter_level
 );
 
     wire S1, S2;
