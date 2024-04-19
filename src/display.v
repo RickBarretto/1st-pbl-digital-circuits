@@ -1,6 +1,6 @@
 module display(
-    input asp, 
-    input got,
+    input dripper, 
+    input splinker,
     
     output A,
     output B,
@@ -11,7 +11,7 @@ module display(
     output G
 );
 
-    not not1(A,asp);
-    and and1(S1,got,A);
+    not not1(A, splinker);
+    and and1(S1, dripper, A);
 
 endmodule 
