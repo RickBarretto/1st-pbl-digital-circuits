@@ -33,6 +33,7 @@ mid_water_level = 40
 low_water_level = 42
 
 [pin_planner.output]
+water_supply_valvule = 72
 dripper_valvule = 75
 splinker_bomb = 76
 alarm = 86
