@@ -4,7 +4,7 @@ module splinker(
     input earth_humidity, 
     input air_humidity, 
     input low_temperature, 
-    input mid_water_level, 
+    input mid_water_level
 );
 
     wire s1, s2, s3, s4, s5;
