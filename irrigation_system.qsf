@@ -53,13 +53,13 @@ set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_boundary_scan
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
-set_global_assignment -name VERILOG_FILE src/watter_supply/sensor_checker.v
-set_location_assignment PIN_42 -to low_watter_level
-set_location_assignment PIN_40 -to mid_watter_level
-set_location_assignment PIN_38 -to high_watter_level
+set_global_assignment -name VERILOG_FILE src/water_supply/sensor_checker.v
+set_location_assignment PIN_42 -to low_water_level
+set_location_assignment PIN_40 -to mid_water_level
+set_location_assignment PIN_38 -to high_water_level
 set_location_assignment PIN_86 -to alarm
-set_global_assignment -name VERILOG_FILE src/watter_supply/watter_supply.v
-set_location_assignment PIN_72 -to watter_supply_valvule
+set_global_assignment -name VERILOG_FILE src/water_supply/water_supply.v
+set_location_assignment PIN_72 -to water_supply_valvule
 set_global_assignment -name VERILOG_FILE src/display.v
 set_global_assignment -name VERILOG_FILE src/irrigation/irrigation_selector.v
 set_global_assignment -name VERILOG_FILE src/irrigation/splinker.v

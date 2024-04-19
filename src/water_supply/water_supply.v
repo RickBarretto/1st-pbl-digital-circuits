@@ -1,4 +1,4 @@
-module watter_supply(
+module water_supply(
 	output valvule,
 
 	input error, 

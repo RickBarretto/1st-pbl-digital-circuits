@@ -4,7 +4,7 @@ module splinker(
     input earth_humidity, 
     input air_humidity, 
     input low_temperature, 
-    input mid_watter_level, 
+    input mid_water_level, 
 );
 
     wire s1, s2, s3, s4, s5;
@@ -13,7 +13,7 @@ module splinker(
     not notA(s2, air_humidity);
     not notT(s3, low_temperature);
     and and1(s4, s1, s2);
-    and and2(s5, s1, s3, mid_watter_level);
+    and and2(s5, s1, s3, mid_water_level);
     or or1(splinker_bomb, s4, s5);
 
 endmodule 

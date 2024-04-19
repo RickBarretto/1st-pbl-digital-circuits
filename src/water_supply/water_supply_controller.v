@@ -1,10 +1,10 @@
 
-//! Controls if the watter supply's valvule is open or closed
+//! Controls if the water supply's valvule is open or closed
 //!
 //! Must be closed when:
 //! * there is an sensor's error
-//! * the watter is full
-module watter_supply_controller (
+//! * the water is full
+module water_supply_controller (
     output valvule,
 
     input error,
