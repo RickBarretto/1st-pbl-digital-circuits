@@ -1,15 +1,15 @@
 module irrigation_selector(
-    input erro, 
-    input Us, 
-    input low, 
+    input error, 
+    input earth_humidity, 
+    input low_watter_level, 
     
-    output rega
+    output irrigation_mode
 );
 
     wire S1, S2;
 
-    not not1(S1,Us);
-    not not2(S2,erro);
-    and and1(rega, S1, S2, low);
+    not not1(S1, earth_humidity);
+    not not2(S2, error);
+    and and1(irrigation_mode, S1, S2, low_watter_level);
 
 endmodule 
