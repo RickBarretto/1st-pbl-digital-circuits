@@ -1,11 +1,5 @@
-db/*
 db/
-incremental_db/**/*
-incremental_db/**/
 incremental_db/
-output_files/*
 output_files/
-simulation/**/*
-simulation/**/
-simulation/*
+simulation/
 *.qws
