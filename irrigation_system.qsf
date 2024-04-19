@@ -21,6 +21,7 @@ set_location_assignment PIN_40 -to mid_water_level
 set_location_assignment PIN_42 -to low_water_level
 
 # Output
+set_location_assignment PIN_72 -to water_supply_valvule
 set_location_assignment PIN_75 -to dripper_valvule
 set_location_assignment PIN_76 -to splinker_bomb
 set_location_assignment PIN_86 -to alarm
