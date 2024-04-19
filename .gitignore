@@ -3,3 +3,11 @@ incremental_db/
 output_files/
 simulation/
 *.qws
+*.rpt
+*.summary
+*.jdi
+*.sld
+*.pin
+*.pof
+*.smsg
+*.done
