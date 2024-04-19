@@ -1,21 +1,21 @@
 from pathlib import Path
 
 project = "irrigation-system"
-git_ignore = Path(".gitignore").read_text()
+git_ignore = Path(".gitignore").read_text().splitlines()
 source = Path("./")
-
-directories: list[Path] = []
 
 print(f"Cleaning {project}'s at root...")
 
-for pattern in git_ignore.splitlines():
-    for file in source.glob(pattern):
-        if file.is_file():
-            print(file)
-            file.unlink()
-        elif file.is_dir():
-            directories.append(file)
+def unlink(path: Path):
+    if path.is_dir():
+        for child in path.iterdir():
+            unlink(child)
+        print(f"Directory removed: {path}\n")
+        path.rmdir()
+    elif path.is_file():
+        print(f"File removed: {path}")
+        path.unlink()
 
-for directory in directories:
-    print(directory)
-    directory.rmdir()
+for pattern in git_ignore:
+    for path in source.glob(pattern):
+        unlink(path)
