@@ -27,9 +27,9 @@ Automated Irrigation System
 
 ## Team
 
+* Cláudio Daniel
 * Paulo Gabriel 
 * Paulo Henrique
-* Cláudio Daniel
 
 ## References
 
