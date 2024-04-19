@@ -11,6 +11,14 @@ Automated Irrigation System
 
 ## Demonstration
 
+## Compiling
+
+1. Open the Intel Quatus II
+2. Open Project (or Ctrl + J)
+3. Select irrigation_system
+4. Compile Project
+5. Open the Programmer and send to the board
+
 ## Tools
 
 * LEDS-CPLD Development Kit, using a EPM240T100C5N (MAX II)
