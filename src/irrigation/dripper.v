@@ -1,19 +1,19 @@
 module dripper(
-    input solo, 
-    input ar, 
-    input T, 
-    input mid, 
+    input earth_humidity, 
+    input air_humidity, 
+    input low_temperature, 
+    input mid_watter_level, 
     
-    output got
+    output dripper_valvule
 );
 
     wire s1, s2, s3;
 
     // (not m and ar) or (t and ar);
 
-    not notM(s1, mid);
-    and and1(s2, ar, s1);
-    and and2(s3, ar, T);
-    or or1(got, s3, s2);
+    not notM(s1, mid_watter_level);
+    and and1(s2, air_humidity, s1);
+    and and2(s3, air_humidity, low_temperature);
+    or or1(dripper_valvule, s3, s2);
 
 endmodule 
