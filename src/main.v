@@ -23,7 +23,7 @@ module main(
 		high_water_level 
 	);
 
-	water_supply open_water_supply(
+	water_supply_controller open_water_supply(
 		water_supply_valvule,
 
 		alarm, 

@@ -3,7 +3,7 @@
 //! Must be closed when:
 //! * there is an sensor's error
 //! * the water is full
-module water_supply(
+module water_supply_controller(
 	output valvule,
 
 	input error, 

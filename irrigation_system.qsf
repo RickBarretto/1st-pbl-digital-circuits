@@ -10,7 +10,7 @@ set_global_assignment -name VERILOG_FILE "src/irrigation/dripper.v"
 set_global_assignment -name VERILOG_FILE "src/irrigation/irrigation_selector.v"
 set_global_assignment -name VERILOG_FILE "src/irrigation/splinker.v"
 set_global_assignment -name VERILOG_FILE "src/water_supply/water_level_checker.v"
-set_global_assignment -name VERILOG_FILE "src/water_supply/water_supply.v"
+set_global_assignment -name VERILOG_FILE "src/water_supply/water_supply_controller.v"
 
 # Input
 set_location_assignment PIN_30 -to low_temperature
