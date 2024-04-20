@@ -1,5 +1,5 @@
-//! Verify if the water level sensors' input are working
-//! Higher levels are enabled only when the lower ones are enalbed too.  
+// Verify if the water level sensors' input are working
+// Higher levels are enabled only when the lower ones are enalbed too.
 module water_level_checker(
     output error,
 
