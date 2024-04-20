@@ -1,3 +1,8 @@
+//! Controls if the water supply's valvule is open or closed
+//!
+//! Must be closed when:
+//! * there is an sensor's error
+//! * the water is full
 module water_supply(
 	output valvule,
 
