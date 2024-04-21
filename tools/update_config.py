@@ -17,6 +17,13 @@ def format_main(file: str):
 def format_file(file: str):
     return _global_assing("VERILOG_FILE", file)
 
+def format_performance():
+    return "\n".join([
+        _global_assing("SMART_RECOMPILE", "ON"),
+        _global_assing("NUM_PARALLEL_PROCESSORS", "ALL"),
+        _global_assing("FLOW_ENABLE_IO_ASSIGNMENT_ANALYSIS", "ON")
+    ])
+
 def format_pin(variable: str, code: int):
     return f"set_location_assignment PIN_{code} -to {variable}"
 
@@ -36,6 +43,9 @@ with open("config.toml", encoding="utf-8") as config_file:
         "",
         format_family(device["family"]),
         format_device(device["model"]),
+        "",
+        "# Performance Configuration",
+        format_performance()
     ]
 
     redirect.append("")
