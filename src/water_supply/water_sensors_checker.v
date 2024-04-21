@@ -4,7 +4,7 @@
 //! without lower ones.
 //! So, to high be enabled, middle and low must be too.
 //!
-module water_level_checker(
+module water_sensors_checker(
     output conflict,
 
     input low_level,

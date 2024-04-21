@@ -15,7 +15,7 @@ module main(
 
 	wire irrigation_mode, water_sensor_error;
 
-	water_level_checker check_error(
+	water_sensors_checker check_error(
 		alarm,
 
 		low_water_level, 
