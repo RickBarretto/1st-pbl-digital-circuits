@@ -7,7 +7,7 @@
 //! 3. Earth must be dry
 //!
 module irrigation_controller(
-    output irrigation_mode,
+    output irrigation,
 
     input error, 
     input earth_humidity, 
@@ -18,6 +18,6 @@ module irrigation_controller(
 
     not not1(S1, earth_humidity);
     not not2(S2, error);
-    and and1(irrigation_mode, S1, S2, low_water_level);
+    and and1(irrigation, S1, S2, low_water_level);
 
 endmodule 
