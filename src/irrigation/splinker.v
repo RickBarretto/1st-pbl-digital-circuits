@@ -1,3 +1,12 @@
+//! Splinker should be open for two different cases:
+//! 1. Low air humidity
+//! 2. High air humidity and water supply's level on middle or high 
+//!
+//! Observation: 
+//!     In any case, if the water level is on critical or 
+//!     there is problems with the water supply's sensors, this must be closed.
+//!     This is handled by the Irrigation Controller.
+//!
 module splinker(
     output splinker_bomb,
 
