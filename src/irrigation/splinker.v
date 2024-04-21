@@ -16,11 +16,13 @@ module splinker(
     input mid_water_level
 );
 
-    wire dry_earth, dry_air, heat_climate, climate_condition, case2;
+    wire dry_earth, dry_air, climate_condition;
 
     not not1(dry_earth, earth_humidity);
     not not2(dry_air, air_humidity);
     and and1(climate_condition, dry_earth, dry_air);
+
+    wire heat_climate, case2;
 
     not not3(heat_climate, low_temperature);
     and and2(case2, dry_earth, heat_climate, mid_water_level);
