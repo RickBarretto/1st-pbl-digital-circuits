@@ -1,3 +1,11 @@
+//! Checks the pre-requisites of the irrigation system
+//! The Dripper and Splinker can only be active if this pass.
+//!
+//! There are two pre-requisites the irrigation must follow:
+//! 1. All sensors must be working right
+//! 2. Water level isn't critical
+//! 3. Earth must be dry
+//!
 module irrigation_selector(
     output irrigation_mode,
 
