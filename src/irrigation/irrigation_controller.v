@@ -19,6 +19,12 @@ module irrigation_controller(
     not not1(dry_earth, earth_humidity);
     not not2(no_conflicts, water_sensor_conflicting);
 
-    and and1(irrigation, dry_earth, no_conflicts, low_water_level);
+    and and1(
+        irrigation, 
+        
+        dry_earth, 
+        no_conflicts, 
+        low_water_level
+    );
 
 endmodule 
