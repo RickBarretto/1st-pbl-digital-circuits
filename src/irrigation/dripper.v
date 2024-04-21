@@ -9,8 +9,6 @@ module dripper(
 
     wire s1, s2, s3;
 
-    // (not m and ar) or (t and ar);
-
     and and1(s3, air_humidity, low_temperature);
 
     not not1(s1, mid_water_level);
