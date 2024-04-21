@@ -8,12 +8,12 @@ module dripper(
     input mid_water_level
 );
 
-    wire s1, s2, environment_conditions;
+    wire low_water_level, s2, environment_conditions;
 
     and and1(environment_conditions, air_humidity, low_temperature);
 
-    not not1(s1, mid_water_level);
-    and and2(s2, air_humidity, s1);
+    not not1(low_water_level, mid_water_level);
+    and and2(s2, air_humidity, low_water_level);
 
     or or1(dripper_valvule, environment_conditions, s2);
 
