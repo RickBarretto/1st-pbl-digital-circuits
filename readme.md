@@ -1,8 +1,8 @@
 
 <h1 align = "center"> 
-🪴
-<br>
 Automated Irrigation System
+<br>
+🪴
 </h1>
 
 ## At A Glance

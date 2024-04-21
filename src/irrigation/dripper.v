@@ -1,3 +1,12 @@
+//! Dripper should be open for two different cases:
+//! 1. High air humidity and cold climate
+//! 2. High air humidity and water supply's level bellow the middle
+//!
+//! Observation: 
+//!     In any case, if the water level is on critical or 
+//!     there is problems with the water supply's sensors, this must be closed.
+//!     This is handled by the Irrigation Controller.
+//!
 module dripper(
     output dripper_valvule,
 
@@ -7,13 +16,15 @@ module dripper(
     input mid_water_level
 );
 
-    wire s1, s2, s3;
+    wire environment_conditions;
 
-    // (not m and ar) or (t and ar);
+    and and1(environment_conditions, air_humidity, low_temperature);
 
-    not notM(s1, mid_water_level);
-    and and1(s2, air_humidity, s1);
-    and and2(s3, air_humidity, low_temperature);
-    or or1(dripper_valvule, s3, s2);
+    wire low_water_level, case2;
+
+    not not1(low_water_level, mid_water_level);
+    and and2(case2, air_humidity, low_water_level);
+
+    or or1(dripper_valvule, environment_conditions, case2);
 
 endmodule 

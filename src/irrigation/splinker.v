@@ -1,3 +1,12 @@
+//! Splinker should be open for two different cases:
+//! 1. Low air humidity
+//! 2. High air humidity and water supply's level on middle or high 
+//!
+//! Observation: 
+//!     In any case, if the water level is on critical or 
+//!     there is problems with the water supply's sensors, this must be closed.
+//!     This is handled by the Irrigation Controller.
+//!
 module splinker(
     output splinker_bomb,
 
@@ -7,13 +16,17 @@ module splinker(
     input mid_water_level
 );
 
-    wire s1, s2, s3, s4, s5;
+    wire dry_earth, dry_air, climate_condition;
 
-    not notS(s1, earth_humidity);
-    not notA(s2, air_humidity);
-    not notT(s3, low_temperature);
-    and and1(s4, s1, s2);
-    and and2(s5, s1, s3, mid_water_level);
-    or or1(splinker_bomb, s4, s5);
+    not not1(dry_earth, earth_humidity);
+    not not2(dry_air, air_humidity);
+    and and1(climate_condition, dry_earth, dry_air);
+
+    wire heat_climate, case2;
+
+    not not3(heat_climate, low_temperature);
+    and and2(case2, dry_earth, heat_climate, mid_water_level);
+    
+    or or1(splinker_bomb, climate_condition, case2);
 
 endmodule 

@@ -15,7 +15,7 @@ module main(
 
 	wire irrigation_mode, water_sensor_error;
 
-	water_level_checker check_error(
+	water_sensors_checker check_error(
 		alarm,
 
 		low_water_level, 
@@ -23,14 +23,14 @@ module main(
 		high_water_level 
 	);
 
-	water_supply open_water_supply(
+	water_supply_controller open_water_supply(
 		water_supply_valvule,
 
 		alarm, 
 		high_water_level 
 	);
 
-	irrigation_selector select_irrigator(
+	irrigation_controller check_prerequisites(
 		irrigation_mode,
 
 		alarm,
