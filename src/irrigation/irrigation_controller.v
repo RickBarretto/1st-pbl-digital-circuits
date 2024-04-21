@@ -25,7 +25,7 @@ module irrigation_controller(
     //! since this is a pre-requisite for other higher levels.
     //!
     //! So, low_water_level disabled and no_conflicts means critical_water_level
-    and and1(
+    and all_cases(
         irrigation, 
         
         dry_earth, 
