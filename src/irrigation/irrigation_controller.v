@@ -19,6 +19,12 @@ module irrigation_controller(
     not not1(dry_earth, earth_humidity);
     not not2(no_conflicts, water_sensor_conflicting);
 
+    //! The reason why other levels are not checked here is because 
+    //! if there is a low level enabled and there is no conflict on sensors,
+    //! that means the real value of the water supply is at least on low,
+    //! since this is a pre-requisite for other higher levels.
+    //!
+    //! So, low_water_level disabled and no_conflicts means critical_water_level
     and and1(
         irrigation, 
         
