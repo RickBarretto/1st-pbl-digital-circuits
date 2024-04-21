@@ -20,9 +20,11 @@ module splinker(
 
     not not1(s1, earth_humidity);
     not not2(s2, air_humidity);
-    not not3(s3, low_temperature);
     and and1(s4, s1, s2);
+
+    not not3(s3, low_temperature);
     and and2(s5, s1, s3, mid_water_level);
+    
     or or1(splinker_bomb, s4, s5);
 
 endmodule 
