@@ -19,7 +19,6 @@ module splinker(
     wire dry_earth, dry_air, heat_climate, climate_condition, case2;
 
     not not1(dry_earth, earth_humidity);
-
     not not2(dry_air, air_humidity);
     and and1(climate_condition, dry_earth, dry_air);
 
