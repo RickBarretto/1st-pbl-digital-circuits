@@ -7,10 +7,10 @@
 module water_supply_controller(
 	output valvule,
 
-	input error, 
-	input high
+	input water_sensors_conflicting, 
+	input high_water_level
 );
 
-	nor low_and_right(valvule, error, high);
+	nor low_and_right(valvule, water_sensors_conflicting, high_water_level);
 
 endmodule
