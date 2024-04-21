@@ -14,6 +14,7 @@ module dripper(
     not notM(s1, mid_water_level);
     and and1(s2, air_humidity, s1);
     and and2(s3, air_humidity, low_temperature);
+
     or or1(dripper_valvule, s3, s2);
 
 endmodule 
