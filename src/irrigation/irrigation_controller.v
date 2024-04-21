@@ -6,7 +6,7 @@
 //! 2. Water level isn't critical
 //! 3. Earth must be dry
 //!
-module irrigation_selector(
+module irrigation_controller(
     output irrigation_mode,
 
     input error, 

@@ -30,7 +30,7 @@ module main(
 		high_water_level 
 	);
 
-	irrigation_selector select_irrigator(
+	irrigation_controller check_prerequisites(
 		irrigation_mode,
 
 		alarm,
