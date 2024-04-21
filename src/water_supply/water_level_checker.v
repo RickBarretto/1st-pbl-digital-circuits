@@ -1,5 +1,9 @@
-// Verify if the water level sensors' input are working
-// Higher levels are enabled only when the lower ones are enalbed too.
+//! Checks if there are conflicting values between water level's sensors
+//!
+//! There is a conflict always when there is a higher level enabled,
+//! without lower ones.
+//! So, to high be enabled, middle and low must be too.
+//!
 module water_level_checker(
     output error,
 
