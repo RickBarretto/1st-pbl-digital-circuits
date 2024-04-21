@@ -14,11 +14,11 @@ module irrigation_controller(
     input low_water_level
 );
 
-    wire S1, S2;
+    wire dry_earth, no_conflicts;
 
-    not not1(S1, earth_humidity);
-    not not2(S2, water_sensor_conflicting);
-    
-    and and1(irrigation, S1, S2, low_water_level);
+    not not1(dry_earth, earth_humidity);
+    not not2(no_conflicts, water_sensor_conflicting);
+
+    and and1(irrigation, dry_earth, no_conflicts, low_water_level);
 
 endmodule 
