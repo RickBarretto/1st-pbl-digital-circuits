@@ -11,9 +11,10 @@ module dripper(
 
     // (not m and ar) or (t and ar);
 
+    and and1(s3, air_humidity, low_temperature);
+
     not not1(s1, mid_water_level);
-    and and1(s2, air_humidity, s1);
-    and and2(s3, air_humidity, low_temperature);
+    and and2(s2, air_humidity, s1);
 
     or or1(dripper_valvule, s3, s2);
 
