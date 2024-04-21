@@ -39,8 +39,10 @@ with open("config.toml", encoding="utf-8") as config_file:
     output = Path(f"{project}.qsf")
     
     redirect = [
+        "# Compiling Configuration",
         format_main(quartus["main_file"]),
         "",
+        "# Device Configuration",
         format_family(device["family"]),
         format_device(device["model"]),
         "",
@@ -49,19 +51,19 @@ with open("config.toml", encoding="utf-8") as config_file:
     ]
 
     redirect.append("")
-    redirect.append("# Modules")
+    redirect.append("# Modules Including")
 
     redirect += [format_file(str(file).replace("\\", "/")) for file in source.glob("**/*.v")]
 
     redirect.append("")
-    redirect.append("# Input")
+    redirect.append("# Input Setting")
 
     redirect += [format_pin(variable, pin) for variable, pin in 
         config["pin_planner"]["input"].items()
     ]
 
     redirect.append("")
-    redirect.append("# Output")
+    redirect.append("# Output Setting")
 
     redirect += [format_pin(variable, pin) for variable, pin in 
         config["pin_planner"]["output"].items()
