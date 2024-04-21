@@ -1,9 +1,16 @@
+# Compiling Configuration
 set_global_assignment -name TOP_LEVEL_ENTITY "main"
 
+# Device Configuration
 set_global_assignment -name FAMILY "MAX II"
 set_global_assignment -name DEVICE "EPM240T100C5"
 
-# Modules
+# Performance Configuration
+set_global_assignment -name SMART_RECOMPILE "ON"
+set_global_assignment -name NUM_PARALLEL_PROCESSORS "ALL"
+set_global_assignment -name FLOW_ENABLE_IO_ASSIGNMENT_ANALYSIS "ON"
+
+# Modules Including
 set_global_assignment -name VERILOG_FILE "src/display.v"
 set_global_assignment -name VERILOG_FILE "src/main.v"
 set_global_assignment -name VERILOG_FILE "src/irrigation/dripper.v"
@@ -12,7 +19,7 @@ set_global_assignment -name VERILOG_FILE "src/irrigation/splinker.v"
 set_global_assignment -name VERILOG_FILE "src/water_supply/water_sensors_checker.v"
 set_global_assignment -name VERILOG_FILE "src/water_supply/water_supply_controller.v"
 
-# Input
+# Input Setting
 set_location_assignment PIN_30 -to low_temperature
 set_location_assignment PIN_34 -to air_humidity
 set_location_assignment PIN_36 -to earth_humidity
@@ -20,7 +27,7 @@ set_location_assignment PIN_38 -to high_water_level
 set_location_assignment PIN_40 -to mid_water_level
 set_location_assignment PIN_42 -to low_water_level
 
-# Output
+# Output Setting
 set_location_assignment PIN_72 -to water_supply_valvule
 set_location_assignment PIN_75 -to dripper_valvule
 set_location_assignment PIN_76 -to splinker_bomb
