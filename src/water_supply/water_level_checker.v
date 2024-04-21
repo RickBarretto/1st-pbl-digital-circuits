@@ -5,18 +5,16 @@
 //! So, to high be enabled, middle and low must be too.
 //!
 module water_level_checker(
-    output error,
+    output conflict,
 
-    //! water's level sensors
-    input low,
-    input mid,
-    input high
+    input low_level,
+    input mid_level,
+    input high_level
 );
 
-    wire high_mid;
+    wire higher_levels;
 
-    nor nor_1(high_mid, high, mid);
-    nor nor_2(error, high_mid, low); 
-
+    nor nor_1(higher_levels, high_level, mid_level);
+    nor nor_2(conflict, higher_levels, low_level); 
 
 endmodule
