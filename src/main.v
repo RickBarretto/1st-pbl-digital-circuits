@@ -50,7 +50,6 @@ module main(
 	dripper open_dripper(
 		dripper_valvule,
 
-		earth_humidity, 
 		air_humidity, 
 		low_temperature, 
 		mid_water_level 

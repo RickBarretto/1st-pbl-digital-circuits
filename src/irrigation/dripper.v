@@ -10,6 +10,9 @@
 module dripper(
     output dripper_valvule,
 
+
+    input earth_humidity, 
+ 
     input earth_humidity, 
     input air_humidity, 
     input low_temperature, 
