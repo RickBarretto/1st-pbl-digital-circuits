@@ -13,10 +13,11 @@ module main(
 	output dripper_valvule
 );
 
-	wire water_sensor_error, splinker_mode_on, dripper_mode_on, irrigation_on;
+	wire water_sensor_conflict, critical_water_level;
+	wire splinker_mode_on, dripper_mode_on, irrigation_on;
 
 	water_sensors_checker check_error(
-		alarm,
+		water_sensor_conflict,
 
 		low_water_level, 
 		mid_water_level, 
@@ -26,14 +27,14 @@ module main(
 	water_supply_controller open_water_supply(
 		water_supply_valvule,
 
-		alarm, 
+		water_sensor_conflict, 
 		high_water_level 
 	);
 
 	irrigation_controller check_prerequisites(
 		irrigation_on,
 
-		alarm,
+		water_sensor_conflict,
 		earth_humidity, 
 		low_water_level 
 	);
@@ -46,9 +47,12 @@ module main(
 		mid_water_level 
 	);
 
-	not switch_irrigation_mode(dripper_mode_on, splinker_mode_on);
+	not switch_irrigation_mode(dripper_mode_on, splinker_mode_on),
+		get_critical_level(critical_water_level, low_water_level);
 
 	and open_splinker(splinker_bomb, splinker_mode_on, irrigation_on);
 	and open_splinker(dripper_valvule, splinker_mode_on, irrigation_on);
+
+	or activate_alarm(alarm, water_sensor_conflict, critical_water_level);
 	
 endmodule
