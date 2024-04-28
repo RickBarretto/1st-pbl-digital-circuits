@@ -11,11 +11,13 @@ set_global_assignment -name NUM_PARALLEL_PROCESSORS "ALL"
 set_global_assignment -name FLOW_ENABLE_IO_ASSIGNMENT_ANALYSIS "ON"
 
 # Modules Including
+set_global_assignment -name VERILOG_FILE "src/alarm.v"
 set_global_assignment -name VERILOG_FILE "src/display.v"
 set_global_assignment -name VERILOG_FILE "src/main.v"
-set_global_assignment -name VERILOG_FILE "src/irrigation/dripper.v"
 set_global_assignment -name VERILOG_FILE "src/irrigation/irrigation_controller.v"
-set_global_assignment -name VERILOG_FILE "src/irrigation/splinker.v"
+set_global_assignment -name VERILOG_FILE "src/irrigation/irrigation_encoder.v"
+set_global_assignment -name VERILOG_FILE "src/irrigation/irrigation_selector.v"
+set_global_assignment -name VERILOG_FILE "src/water_supply/water_encoder.v"
 set_global_assignment -name VERILOG_FILE "src/water_supply/water_sensors_checker.v"
 set_global_assignment -name VERILOG_FILE "src/water_supply/water_supply_controller.v"
 
