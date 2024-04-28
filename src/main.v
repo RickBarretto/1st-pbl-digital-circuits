@@ -79,12 +79,11 @@ module main(
 	// Display related
 	//-------------------------------------------
 
-	wire encoded_water_1, encoded_water_0;
-	wire encode_irrigation_1, encode_irrigation_0;
+	wire [1:0] encoded_water;
+	wire [1:0] encoded_irrigation;
 
 	water_encoder encode_water(
-		encoded_water_1,
-		encoded_water_0,
+		encoded_water,
 
 		high_water_level,
 		mid_water_level,
@@ -92,8 +91,7 @@ module main(
 	);
 
 	irrigation_encoder encode_irrigation(
-		encode_irrigation_1,
-		encode_irrigation_0,
+		encoded_irrigation,
 
 		irrigation_on,
 		splinker_bomb,
