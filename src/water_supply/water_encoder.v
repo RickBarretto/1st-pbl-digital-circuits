@@ -1,3 +1,14 @@
+//! Encodes the water level
+//!
+//! Possible Encodings for water level:
+//!     * 000: Critical
+//!     * 001: Low
+//!     * 010: Mid
+//!     * 011: High
+//! 
+//! Observation: 
+//!     Encoding it is important because of the display decoder.
+//!
 module water_encoder(
     output bit1,  
     output bit0,  

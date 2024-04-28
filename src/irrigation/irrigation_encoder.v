@@ -1,3 +1,12 @@
+//! Encodes the irrigation system
+//!
+//! Possible Encodings:
+//!     * 100: Dripper
+//!     * 101: Splinker 
+//! 
+//! Observation: 
+//!     Encoding it is important because of the display decoder.
+//!
 module irrigation_encoder(
     output bit1, 
     output bit0, 

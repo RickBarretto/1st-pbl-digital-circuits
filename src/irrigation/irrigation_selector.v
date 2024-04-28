@@ -1,6 +1,6 @@
-//! Dripper should be open for two different cases:
-//! 1. High air humidity and cold climate
-//! 2. High air humidity and water supply's level bellow the middle
+//! Splinker should be open for two different cases:
+//! 1. Low air humidity
+//! 2. High air humidity, Cold climate and water supply's level above the middle
 //!
 //! Observation:
 //!     In any case, if the water level is on critical or
