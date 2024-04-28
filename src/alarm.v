@@ -1,8 +1,9 @@
 module alarm_controller (
     output alarm_on,
 
-    input low_water_level, conflicting_values;
-)
+    input low_water_level, 
+    input conflicting_values
+);
 
     wire critical_water_level;
 
