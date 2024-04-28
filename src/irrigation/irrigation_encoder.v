@@ -8,8 +8,7 @@
 //!     Encoding it is important because of the display decoder.
 //!
 module irrigation_encoder(
-    output bit1, 
-    output bit0, 
+    output [1:0] irrigation_encoded,
     
     input irrigation_on, 
     input splinker_on, 
@@ -18,7 +17,7 @@ module irrigation_encoder(
 
     not (wire_a, dripper_on);
 
-    and (bit1, irrigation_on, splinker_on, dripper_on);
-    and (bit0, irrigation_on, splinker_on, wire_a);
+    and (irrigation_encoded[1], irrigation_on, splinker_on, dripper_on);
+    and (irrigation_encoded[0], irrigation_on, splinker_on, wire_a);
 
 endmodule

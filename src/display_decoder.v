@@ -7,16 +7,8 @@ module display(
     output bottom_right_segment,
     output bottom_segment,
 
-    input irrigation_mode_on,
-    
-    input conflicting_water_sensor,
-    input low_water_level,
-    input mid_water_level,
-    input high_water_level,
-
-    input dripper, 
-    input splinker
+    input [2:0] encoded_entry
 );
-    
+
 
 endmodule 

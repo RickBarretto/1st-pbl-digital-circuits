@@ -10,8 +10,7 @@
 //!     Encoding it is important because of the display decoder.
 //!
 module water_encoder(
-    output bit1,  
-    output bit0,  
+    output [1:0] encoded_water,  
         
     input high_water_level, 
     input mid_water_level, 
@@ -25,9 +24,9 @@ module water_encoder(
     // B Level
     and (wire_b1, wire_a1, wire_a2, low_water_level);
     and (wire_b2, high_water_level, mid_water_level, low_water_level);
-    or  (bit0, wire_b1, wire_b2);
 
     // C Level
-    and (bit1, mid_water_level, low_water_level);
+    and (encoded_water[1], mid_water_level, low_water_level);
+    or  (encoded_water[0], wire_b1, wire_b2);
 
 endmodule

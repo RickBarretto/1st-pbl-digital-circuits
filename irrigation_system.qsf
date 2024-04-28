@@ -12,7 +12,7 @@ set_global_assignment -name FLOW_ENABLE_IO_ASSIGNMENT_ANALYSIS "ON"
 
 # Modules Including
 set_global_assignment -name VERILOG_FILE "src/alarm.v"
-set_global_assignment -name VERILOG_FILE "src/display.v"
+set_global_assignment -name VERILOG_FILE "src/display_decoder.v"
 set_global_assignment -name VERILOG_FILE "src/main.v"
 set_global_assignment -name VERILOG_FILE "src/irrigation/irrigation_controller.v"
 set_global_assignment -name VERILOG_FILE "src/irrigation/irrigation_encoder.v"
