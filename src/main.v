@@ -72,7 +72,7 @@ module main(
 	// Alarm related
 	//-------------------------------------------
 
-	alarm_controller enable_alarm(alarm, low_water_level, conflicting_values);
+	alarm_controller enable_alarm(alarm, mid_water_level, conflicting_values);
 	
 
 	//-------------------------------------------

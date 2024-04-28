@@ -7,13 +7,13 @@
 module alarm_controller (
     output alarm_on,
 
-    input low_water_level, 
+    input mid_water_level, 
     input conflicting_values
 );
 
-    wire critical_water_level;
+    wire low_water_level;
 
-	not (critical_water_level, low_water_level);
-	or (alarm_on, conflicting_values, critical_water_level);
+	not (low_water_level, mid_water_level);
+	or (alarm_on, conflicting_values, low_water_level);
 
 endmodule
