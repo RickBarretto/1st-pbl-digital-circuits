@@ -28,12 +28,12 @@ module irrigation_encoder(
     // -----------------------------------------------------
     // OUTPUT 0
 
-    not (irrigation_off, irrigation_on); // Irrigação'
+    not (dripper_off, dripper_on); // Got'
 
-    // Irrigação' * Asp * Got
+    // Irrigação * Asp * Got'
     and (
         irrigation_encoded[0],
-        irrigation_off, splinker_on, dripper_on  
+        irrigation_on, splinker_on, dripper_off  
     );
 
 
