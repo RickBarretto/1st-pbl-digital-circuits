@@ -15,9 +15,27 @@ module irrigation_encoder(
     input dripper_on
 );
 
-    not (wire_a, dripper_on);
+    // -----------------------------------------------------
+    // OUTPUT 1
 
-    and (irrigation_encoded[1], irrigation_on, splinker_on, dripper_on);
-    and (irrigation_encoded[0], irrigation_on, splinker_on, wire_a);
+    // Irrigação * Asp * Got
+    and (
+        irrigation_encoded[1], 
+        irrigation_on, splinker_on, dripper_on
+    );
+
+    
+    // -----------------------------------------------------
+    // OUTPUT 0
+
+    not (irrigation_off, irrigation_on); // Irrigação'
+    not (dripper_off, dripper_on);       // Got'
+
+    // Irrigação' * Asp * Got'
+    and (
+        irrigation_encoded[0],
+        irrigation_off, splinker_on, dripper_off    
+    );
+
 
 endmodule
