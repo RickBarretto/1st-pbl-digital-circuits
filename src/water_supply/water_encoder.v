@@ -12,21 +12,31 @@
 module water_encoder(
     output [1:0] encoded_water,  
         
-    input high_water_level, 
-    input mid_water_level, 
-    input low_water_level
+    //! Water Level inputs
+    input high, 
+    input mid, 
+    input low
 );
 
-    // A Level
-    not (wire_a1, high_water_level);
-    not (wire_a2, mid_water_level);
+    // -----------------------------------------------------
+    // OUTPUT 1
 
-    // B Level
-    and (wire_b1, wire_a1, wire_a2, low_water_level);
-    and (wire_b2, high_water_level, mid_water_level, low_water_level);
+    // M * L
+    and (encoded_water[1], mid, low);
 
-    // C Level
-    and (encoded_water[1], mid_water_level, low_water_level);
+
+    // -----------------------------------------------------
+    // OUTPUT 0
+
+    not (wire_a1, high);             // H'
+    not (wire_a2, mid);              // M'
+    and (wire_b1, wire_a1, wire_a2); // (H' * M' * L)
+
+    
+    and (wire_b2, high, mid, low);   // (H * M * L)
+
+    // (H' * M' * L) + (H * M * L)
     or  (encoded_water[0], wire_b1, wire_b2);
+
 
 endmodule
