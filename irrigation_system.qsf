@@ -1,42 +1,43 @@
 # Compiling Configuration
-set_global_assignment -name TOP_LEVEL_ENTITY main
+set_global_assignment -name TOP_LEVEL_ENTITY "main"
 
 # Device Configuration
 set_global_assignment -name FAMILY "MAX II"
-set_global_assignment -name DEVICE EPM240T100C5
+set_global_assignment -name DEVICE "EPM240T100C5"
 
 # Performance Configuration
-set_global_assignment -name SMART_RECOMPILE ON
-set_global_assignment -name NUM_PARALLEL_PROCESSORS ALL
-set_global_assignment -name FLOW_ENABLE_IO_ASSIGNMENT_ANALYSIS ON
+set_global_assignment -name SMART_RECOMPILE "ON"
+set_global_assignment -name NUM_PARALLEL_PROCESSORS "ALL"
+set_global_assignment -name FLOW_ENABLE_IO_ASSIGNMENT_ANALYSIS "ON"
 
 # Modules Including
-set_global_assignment -name VERILOG_FILE src/alarm.v
-set_global_assignment -name VERILOG_FILE src/main.v
-set_global_assignment -name VERILOG_FILE src/display/display_decoder.v
-set_global_assignment -name VERILOG_FILE src/display/disable_display.v
-set_global_assignment -name VERILOG_FILE src/display/display_selector.v
-set_global_assignment -name VERILOG_FILE src/irrigation/irrigation_controller.v
-set_global_assignment -name VERILOG_FILE src/irrigation/irrigation_encoder.v
-set_global_assignment -name VERILOG_FILE src/irrigation/irrigation_selector.v
-set_global_assignment -name VERILOG_FILE src/water_supply/water_encoder.v
-set_global_assignment -name VERILOG_FILE src/water_supply/water_sensors_checker.v
-set_global_assignment -name VERILOG_FILE src/water_supply/water_supply_controller.v
-set_global_assignment -name VERILOG_FILE src/utils/multiplexer_2x1.v
+set_global_assignment -name VERILOG_FILE "src/alarm.v"
+set_global_assignment -name VERILOG_FILE "src/main.v"
+set_global_assignment -name VERILOG_FILE "src/display/disable_display.v"
+set_global_assignment -name VERILOG_FILE "src/display/display_decoder.v"
+set_global_assignment -name VERILOG_FILE "src/display/display_selector.v"
+set_global_assignment -name VERILOG_FILE "src/irrigation/irrigation_controller.v"
+set_global_assignment -name VERILOG_FILE "src/irrigation/irrigation_encoder.v"
+set_global_assignment -name VERILOG_FILE "src/irrigation/irrigation_selector.v"
+set_global_assignment -name VERILOG_FILE "src/utils/multiplexer_2x1.v"
+set_global_assignment -name VERILOG_FILE "src/water_supply/water_encoder.v"
+set_global_assignment -name VERILOG_FILE "src/water_supply/water_sensors_checker.v"
+set_global_assignment -name VERILOG_FILE "src/water_supply/water_supply_controller.v"
 
 # Input Setting
-
-# Output Setting
-set_location_assignment PIN_86 -to alarm
+set_location_assignment PIN_30 -to low_temperature
 set_location_assignment PIN_34 -to air_humidity
-set_location_assignment PIN_75 -to dripper_valvule
 set_location_assignment PIN_36 -to earth_humidity
 set_location_assignment PIN_38 -to high_water_level
-set_location_assignment PIN_30 -to low_temperature
-set_location_assignment PIN_42 -to low_water_level
 set_location_assignment PIN_40 -to mid_water_level
+set_location_assignment PIN_42 -to low_water_level
 set_location_assignment PIN_35 -to selector
+
+# Output Setting
+set_location_assignment PIN_54 -to water_supply_valvule
+set_location_assignment PIN_75 -to dripper_valvule
 set_location_assignment PIN_76 -to splinker_bomb
+set_location_assignment PIN_86 -to alarm
 set_location_assignment PIN_90 -to segment_a
 set_location_assignment PIN_70 -to segment_b
 set_location_assignment PIN_41 -to segment_c
@@ -44,7 +45,6 @@ set_location_assignment PIN_98 -to segment_d
 set_location_assignment PIN_100 -to segment_e
 set_location_assignment PIN_92 -to segment_f
 set_location_assignment PIN_39 -to segment_g
-set_location_assignment PIN_54 -to water_supply_valvule
 set_location_assignment PIN_66 -to display_0
 set_location_assignment PIN_68 -to display_1
 set_location_assignment PIN_88 -to display_2
