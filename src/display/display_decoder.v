@@ -1,85 +1,84 @@
-module display(
+module display_decoder(
     output a, output b, output c,
     output d, output e, output f,
     output g,
 
-    input [2:0] entry
+	input selector,
+    input entry_Bit0,
+	input entry_Bit1
+	 
 );
 
     // -----------------------------------------------------
     // Segment A
 
-    not (wire_a_b1, entry[2]);           // A'
-    nor (wire_a_b2, entry[1], entry[c]); // (B' * C')
-    and (wire_a_b3, entry[1], entry[0]); // (B * C)
-
-    // A' + (B' * C') + (B * C)
-    or  (a, wire_a_b1, wire_a_b2, wire_a_b3); 
+	// seletor - A 
+	// bit1 - B
+	// bit0 - C
+    not (not1, selector);   // A'
+    not (not2, entry_Bit1); // B'
+	not (not3, entry_Bit0); // C'
+	 
+	and (and1, selector, entry_Bit1, entry_Bit0); // ABC
+	and (and2, not2, not3);     // B'C'
+	and (and3, not1, not2);     // A'B'
+	 
+    // ABC + B'C' + A'B'
+	or (a, and1, and2, and3);
 
 
     // -----------------------------------------------------
     // Segment B
 
-    not (wire_b_a1, entry[0]); // C'
+	and (and4, selector, entry_Bit1);   // AB
 
-    // C' + B
-    or  (b, wire_b_a1, entry[1]); 
+    // B'C' + AB
+    or  (b, and4, and2); 
 
 
     // -----------------------------------------------------
     // Segment C
+	 
+	and (and8, not1, not3);
 
-    nor (wire_c_a1, entry[1], entry[0]); // (B' * C')
-    and (wire_c_a2, entry[1], entry[1]); // (B * C)
-
-    // (B' * C') + (B * C)
-    or  (c, wire_c_a1, wire_c_a2);
+    // ABC + A'C' + B'C'
+    or  (c, and1, and8, and2);  
     
 
     // -----------------------------------------------------
     // Segment D
-
-    not (wire_d_a1, entry[2]); // A'
-    not (wire_d_a2, entry[1]); // B'
-
-    // A' + B' + C
-    or  (d, wire_d_a1, wire_d_a2, entry[0]); 
+	 
+	and (and5, selector, entry_Bit0);  // AC
+	 
+	// AC + B'
+    or  (d, and5, not2); 
 
 
     // -----------------------------------------------------
     // Segment E
 
-    nor (wire_e_a1, entry[2], entry[1]);           // (A' * B')
-    nor (wire_e_a2, entry[2], entry[0]);           // (A' * C')
-    nor (wire_e_a3, entry[1], entry[0]);           // (B' * C')
-    and (wire_e_a4, entry[2], entry[1], entry[0]); // (A * B * C)
+	and (and6, entry_Bit1, entry_Bit0);  // BC
+	and (and7, not1, entry_Bit0);
 
-    // (A' * B') + (A' * C') + (B' * C') + (A * B * C)
+    // B'C' + A'C + BC
     or  (   
-        e, wire_e_a1, wire_e_a2, wire_e_a3, wire_e_a4
+        e, and2, and7, and6
     );
 
 
     // -----------------------------------------------------
     // Segment F
 
-    nor (wire_f_a1, entry[2], entry[1]);           // (A' * B')
-    nor (wire_f_a2, entry[1], entry[0]);           // (B' * C')
-    and (wire_f_a3, entry[2], entry[1], entry[0]); // (A * B * C)
 
-    // (A' * B') + (B' * C') + (A * B * C)
-    or  (f, wire_f_a1, wire_f_a2, wire_f_a3);
+    // B'C' + BC + A'
+    or  (f, and2, and6, not1);
 
 
     // -----------------------------------------------------
     // Segment G
-    
-    not (wire_g_a1, entry[2]);           // A'
-    nor (wire_g_a2, entry[1], entry[0]); // (B' * C')
-    and (wire_g_a3, entry[1], entry[0]); // (B * C)
 
-    // A' + (B' * C') + (B * C)
-    or  (g, wire_g_a1, wire_g_a2, wire_g_a3);
+    // B'C' + A'B' + AB
+    or  (g, and2, and3, and4);
 
 
 endmodule 

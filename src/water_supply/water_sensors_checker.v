@@ -12,14 +12,12 @@ module water_sensors_checker(
     input high_level
 );
 
-    wire higher_levels;
-
-    not (wire1, low_level);
+    not (wire_a1, low_level);
     not (wire2, mid_level);
 
-    and (wire3, wire1, mid_level);
-    and (wire4, high_level, wire2);
+    and (wire_b1, wire_a1, mid_level);
+    and (wire_b2, high_level, wire2);
 
-    or (conflict, wire3, wire4);
+    or (conflict, wire_b1, wire_b2);
 
 endmodule

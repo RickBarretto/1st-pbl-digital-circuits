@@ -19,9 +19,11 @@ authors = [
     "Paulo Henrique"
 ]
 
+
 [device]
 family = "MAX II"
 model = "EPM240T100C5"
+
 
 [pin_planner.input]
 low_temperature = 30
@@ -32,8 +34,23 @@ high_water_level = 38
 mid_water_level = 40
 low_water_level = 42
 
+selector = 35
+
+
 [pin_planner.output]
-water_supply_valvule = 72
+water_supply_valvule = 54
 dripper_valvule = 75
 splinker_bomb = 76
 alarm = 86
+
+a = 90
+b = 70
+c = 41
+d = 98
+e = 100
+f = 92
+g = 39
+Seg0 = 66
+Seg1 = 68
+Seg2 = 88
+P = 96

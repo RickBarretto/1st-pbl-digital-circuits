@@ -11,8 +11,6 @@ module alarm_controller (
     input conflicting_values
 );
 
-    wire low_water_level;
-
 	not (low_water_level, mid_water_level);
 	or (alarm_on, conflicting_values, low_water_level);
 

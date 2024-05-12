@@ -8,7 +8,8 @@
 //!     Encoding it is important because of the display decoder.
 //!
 module irrigation_encoder(
-    output [1:0] irrigation_encoded,
+    output irrigation_encoded_Bit0,
+	output irrigation_encoded_Bit1,
     
     input irrigation_on, 
     input splinker_on, 
@@ -20,7 +21,7 @@ module irrigation_encoder(
 
     // Irrigação * Asp * Got
     and (
-        irrigation_encoded[1], 
+        irrigation_encoded_Bit1, 
         irrigation_on, splinker_on, dripper_on
     );
 
@@ -28,12 +29,12 @@ module irrigation_encoder(
     // -----------------------------------------------------
     // OUTPUT 0
 
-    not (dripper_off, dripper_on); // Got'
-
+    not (dripper_off, dripper_on); // Irrigação'
+ 
     // Irrigação * Asp * Got'
     and (
-        irrigation_encoded[0],
-        irrigation_on, splinker_on, dripper_off  
+        irrigation_encoded_Bit0,
+        irrigation_on, splinker_on, dripper_off    
     );
 
 

@@ -14,8 +14,6 @@ module irrigation_controller(
     input low_water_level
 );
 
-    wire dry_earth, no_conflicts;
-
     not (dry_earth, earth_humidity);
     not (no_conflicts, water_sensor_conflicting);
 

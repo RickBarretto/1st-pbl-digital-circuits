@@ -15,12 +15,8 @@ module irrigation_selector(
     input mid_water_level
 );
 
-        wire air_dryness, heat_climate;
-
         not (air_dryness, air_humidity);
         not (heat_climate, low_temperature);
-
-        wire wire1;
 
         and (wire1, mid_water_level, heat_climate);
 
