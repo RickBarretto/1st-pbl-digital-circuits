@@ -16,22 +16,25 @@ module irrigation_encoder(
     input dripper_on
 );
 
-    // -----------------------------------------------------
-    // OUTPUT 1
-
-    // Irrigação * Asp * Got
+    //! Caption for formulas:
+    //!
+    //! Irrigation - A 
+	//! Splinker - B
+	//! Dripper - C
+    
+    //! Output 1
+    //! ---------
+    //! Formula: A * B * C
     and (
         irrigation_encoded_Bit1, 
         irrigation_on, splinker_on, dripper_on
     );
 
     
-    // -----------------------------------------------------
-    // OUTPUT 0
-
-    not (dripper_off, dripper_on); // Irrigação'
- 
-    // Irrigação * Asp * Got'
+    //! Output 0
+    //! ---------
+    //! Formula: A * B * C'
+    not (dripper_off, dripper_on);
     and (
         irrigation_encoded_Bit0,
         irrigation_on, splinker_on, dripper_off    
