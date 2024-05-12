@@ -2,6 +2,7 @@ db/
 incremental_db/
 output_files/
 simulation/
+*.cdf
 *.qws
 *.rpt
 *.summary
@@ -11,4 +12,4 @@ simulation/
 *.pof
 *.smsg
 *.done
-*.v.bak
+**/*.bak
