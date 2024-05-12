@@ -7,7 +7,7 @@ module disable_display(
   
 );
 	not (Not1, S0);
-	or or1(segment_off, S0, Not1); 
+	or  (segment_off, S0, Not1); 
 	
 endmodule
 
