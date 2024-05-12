@@ -1,3 +1,5 @@
+//! Disables unused display
+//! You must connect its instance's output into your desired PIN.
 module disable_display(
     output segment_off, 
     
