@@ -1,4 +1,8 @@
-//! This is a MUX
+//! A multiplexer that selects which output will be enabled
+//!
+//! When the selector is enabled, the choosen output 
+//! is from irrigation-system.
+//!
 module display_selector (
     output  encoded_Bit0,
 	output  encoded_Bit1,
