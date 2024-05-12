@@ -1,4 +1,5 @@
 # Compiling Configuration
+set_global_assignment -name TOP_LEVEL_ENTITY main
 
 # Device Configuration
 set_global_assignment -name FAMILY "MAX II"
@@ -13,6 +14,7 @@ set_global_assignment -name FLOW_ENABLE_IO_ASSIGNMENT_ANALYSIS ON
 set_global_assignment -name VERILOG_FILE src/alarm.v
 set_global_assignment -name VERILOG_FILE src/main.v
 set_global_assignment -name VERILOG_FILE src/display/display_decoder.v
+set_global_assignment -name VERILOG_FILE src/display/disable_display.v
 set_global_assignment -name VERILOG_FILE src/display/display_selector.v
 set_global_assignment -name VERILOG_FILE src/irrigation/irrigation_controller.v
 set_global_assignment -name VERILOG_FILE src/irrigation/irrigation_encoder.v
@@ -20,13 +22,11 @@ set_global_assignment -name VERILOG_FILE src/irrigation/irrigation_selector.v
 set_global_assignment -name VERILOG_FILE src/water_supply/water_encoder.v
 set_global_assignment -name VERILOG_FILE src/water_supply/water_sensors_checker.v
 set_global_assignment -name VERILOG_FILE src/water_supply/water_supply_controller.v
+set_global_assignment -name VERILOG_FILE src/utils/multiplexer_2x1.v
 
 # Input Setting
 
 # Output Setting
-
-set_global_assignment -name LAST_QUARTUS_VERSION "20.1.1 Lite Edition"
-set_global_assignment -name VERILOG_FILE src/utils/multiplexer_2x1.v
 set_location_assignment PIN_86 -to alarm
 set_location_assignment PIN_34 -to air_humidity
 set_location_assignment PIN_75 -to dripper_valvule
@@ -45,8 +45,6 @@ set_location_assignment PIN_100 -to segment_e
 set_location_assignment PIN_92 -to segment_f
 set_location_assignment PIN_39 -to segment_g
 set_location_assignment PIN_54 -to water_supply_valvule
-set_global_assignment -name TOP_LEVEL_ENTITY main
-set_global_assignment -name VERILOG_FILE src/display/disable_display.v
 set_location_assignment PIN_66 -to display_0
 set_location_assignment PIN_68 -to display_1
 set_location_assignment PIN_88 -to display_2
