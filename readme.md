@@ -7,7 +7,11 @@ Automated Irrigation System
 
 ## At A Glance
 
-## Features
+### Features
+* Automatically selects the irrigation mode, reading data from environment sensors
+* Enables the alarm in case of low water level or conflicting sensors
+* Displays the water's level and irrigation mode
+* Stops the irrigation if the water tank is on critical level
 
 ## Demonstration
 
