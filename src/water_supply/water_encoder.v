@@ -11,7 +11,7 @@
 //!
 module water_encoder(
     output  encoded_water_Bit0,
-	 output  encoded_water_Bit1,  
+	output  encoded_water_Bit1,  
         
         
     //! Water Level inputs
@@ -23,21 +23,21 @@ module water_encoder(
     // -----------------------------------------------------
     // OUTPUT 1
 
-    // M * L
+    // mid * low
     and (encoded_water_Bit1, mid, low);
 
 
     // -----------------------------------------------------
     // OUTPUT 0
 
-    not (wire_a1, high);             // H'
-    not (wire_a2, mid);              // M'
-    and (wire_b1, wire_a1, wire_a2, low); // (H' * M' * L)
+    not (wire_a1, high);             // high'
+    not (wire_a2, mid);              // mid'
+    and (wire_b1, wire_a1, wire_a2, low); // (high' * mid' * low)
 
     
-    and (wire_b2, high, mid, low);   // (H * M * L)
+    and (wire_b2, high, mid, low);   // (high * mid * low)
 
-    // (H' * M' * L) + (H * M * L)
+    // (high' * mid' * low) + (high * mid * low)
     or  (encoded_water_Bit0, wire_b1, wire_b2);
 
 
