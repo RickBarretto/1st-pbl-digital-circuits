@@ -39,4 +39,4 @@ Automated Irrigation System
 
 DIAS, Anfranserai. Manual do Kit LEDS-CPLD. https://drive.google.com/file/d/168zWlJU0rbnq3q8QJXnrwRY8iO6Ds2xQ/view.
 
-Ronald J. Tocci, Neal S. Widmer, Gregory L. Moss. “Sistemas digitais : princípios e aplicações”.
+FLOYD, T. Funções da Lógica Combinacional. In: JÚNIOR, A. P. (Ed.). Sistemas Digitais: Fundamentos e Aplicações. Tradução: José Lucimar Do Nascimento. Porto Alegre: Bookman, 2007b. p. 312–364. 
