@@ -1,5 +1,7 @@
 from pathlib import Path
-import toml
+
+# from https://github.com/uiri/toml
+import toml # pip install toml
 
 
 def _global_assing(name: str, content: str):
