@@ -13,8 +13,6 @@ Automated Irrigation System
 * Displays the water's level and irrigation mode
 * Stops the irrigation if the water tank is on critical level
 
-## Demonstration
-
 ## Compiling
 
 1. Open the Intel Quatus II
